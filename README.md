@@ -1,6 +1,6 @@
 # Python Requests 라이브러리에 대한 완전한 가이드
 
-[![Bright Data Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
+[![Bright Data Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
 
 이 튜토리얼에서는 Webスクレイピング을 위해 Python에서 Requests 라이브러리를 사용하는 방법을 시연합니다:
 
