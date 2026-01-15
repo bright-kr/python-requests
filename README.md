@@ -2,7 +2,7 @@
 
 [![Bright Data Promo](https://github.com/bright-kr/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.co.kr/)
 
-이 튜토리얼에서는 Webスクレイピング을 위해 Python에서 Requests 라이브러리를 사용하는 방법을 시연합니다:
+이 튜토리얼에서는 Web스크레이핑을 위해 Python에서 Requests 라이브러리를 사용하는 방법을 시연합니다:
 
 - [Requests 라이브러리 소개](#introduction-to-the-requests-library)
 - [HTTP 메서드](#http-methods)
@@ -12,9 +12,9 @@
 
 ## Introduction to the Requests Library
 
-[`Requests`](https://github.com/psf/requests)는 Python을 위한 간단하고 사용자 친화적인 HTTP 툴킷입니다. 자세히 말해, HTTP リクエスト를 만들고 レスポンス를 쉽고 이해하기 쉬운 방식으로 처리할 수 있는 직관적인 API를 제공합니다. [GitHub에서 50k 이상의 star](https://github.com/psf/requests)와 매일 수백만 건의 다운로드를 보유한 Requests는 Python에서 가장 인기 있는 HTTP 클라이언트를 대표합니다.
+[`Requests`](https://github.com/psf/requests)는 Python을 위한 간단하고 사용자 친화적인 HTTP 툴킷입니다. 자세히 말해, HTTP 요청를 만들고 응답를 쉽고 이해하기 쉬운 방식으로 처리할 수 있는 직관적인 API를 제공합니다. [GitHub에서 50k 이상의 star](https://github.com/psf/requests)와 매일 수백만 건의 다운로드를 보유한 Requests는 Python에서 가장 인기 있는 HTTP 클라이언트를 대표합니다.
 
-이 라이브러리가 제공하는 주요 기능에는 모든 HTTP 메서드를 포괄하는 종합적인 API, 서버 응답 처리, リクエスト 커스터마이징, 로그인 메커니즘, 보안 인증서 처리 등이 포함됩니다. 또한 Python Requests 모듈은 기본적으로 [HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616)을 지원합니다.
+이 라이브러리가 제공하는 주요 기능에는 모든 HTTP 메서드를 포괄하는 종합적인 API, 서버 응답 처리, 요청 커스터마이징, 로그인 메커니즘, 보안 인증서 처리 등이 포함됩니다. 또한 Python Requests 모듈은 기본적으로 [HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616)을 지원합니다.
 
 ### Setting up
 
@@ -36,11 +36,11 @@ import requests
 
 Python `requests` 라이브러리의 주요 사용 사례는 다음과 같습니다:
 
-- **웹 서버에 HTTP リクエスト 보내기**: GET リクエ스트를 전송하여 웹 서버에서 데이터를 가져옵니다.
-- **API 사용**: API エンドポイント에 リクエ스트를 보내고 レスポンス를 처리하여 다양한 웹 서비스와 상호작용하고 데이터를 액세스합니다.
-- **Webスクレイピング**: 웹 페이지에 연결된 HTML 문서를 가져오며, 이후 [ `BeautifulSoup` 같은 라이브러리로 파싱](https://brightdata.co.kr/blog/how-tos/beautiful-soup-web-scraping)하여 특정 정보를 추출할 수 있습니다.
-- **웹 애플리케이션 테스트**: HTTP リクエ스트를 시뮬레이션하고 レスポンス를 검증하여 테스트 프로세스를 자동화하고 웹 서비스의 정상 동작을 보장합니다.
-- **파일 다운로드**: 각 URL에 HTTP `GET` リクエスト를 전송하여 이미지, 문서 또는 기타 미디어 파일과 같은 파일을 웹 서버에서 가져옵니다.
+- **웹 서버에 HTTP 요청 보내기**: GET リクエ스트를 전송하여 웹 서버에서 데이터를 가져옵니다.
+- **API 사용**: API 엔드포인트에 リクエ스트를 보내고 응답를 처리하여 다양한 웹 서비스와 상호작용하고 데이터를 액세스합니다.
+- **Web스크레이핑**: 웹 페이지에 연결된 HTML 문서를 가져오며, 이후 [ `BeautifulSoup` 같은 라이브러리로 파싱](https://brightdata.co.kr/blog/how-tos/beautiful-soup-web-scraping)하여 특정 정보를 추출할 수 있습니다.
+- **웹 애플리케이션 테스트**: HTTP リクエ스트를 시뮬레이션하고 응답를 검증하여 테스트 프로세스를 자동화하고 웹 서비스의 정상 동작을 보장합니다.
+- **파일 다운로드**: 각 URL에 HTTP `GET` 요청를 전송하여 이미지, 문서 또는 기타 미디어 파일과 같은 파일을 웹 서버에서 가져옵니다.
 
 **Methods**
 
@@ -49,7 +49,7 @@ Python `requests` 라이브러리의 주요 사용 사례는 다음과 같습니
 |     |     |
 | --- | --- |
 | **Method** | **Description** |
-| [`requests.request()`](https://requests.readthedocs.io/en/latest/api/#requests.request) | 지정된 메서드로 주어진 URL에 커스텀 HTTP リクエスト를 전송합니다 |
+| [`requests.request()`](https://requests.readthedocs.io/en/latest/api/#requests.request) | 지정된 메서드로 주어진 URL에 커스텀 HTTP 요청를 전송합니다 |
 | [`requests.get()`](https://requests.readthedocs.io/en/latest/api/#requests.get) | 지정된 URL에 `GET` リクエ스트를 전송합니다 |
 | [`requests.post()`](https://requests.readthedocs.io/en/latest/api/#requests.post) | 지정된 URL에 `POST` リクエ스트를 전송합니다 |
 | [`requests.put()`](https://requests.readthedocs.io/en/latest/api/#requests.put) | 지정된 URL에 `PUT` リクエ스트를 전송합니다 |
@@ -177,9 +177,9 @@ response = requests.request('DELETE', 'https://api.example.com/products/75')
 
 ### HEAD
 
-[`HEAD`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD) 메서드는 `GET`과 유사하지만, 실제 body 콘텐츠 없이 レスポンス의 ヘッダー만 요청합니다. 따라서 서버가 `HEAD` リクエスト에 대해 반환하는 レスポンス는 `GET` リクエ스트의 레スポンス와 동등하지만 body 데이터가 없습니다.
+[`HEAD`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD) 메서드는 `GET`과 유사하지만, 실제 body 콘텐츠 없이 응답의 헤더만 요청합니다. 따라서 서버가 `HEAD` 요청에 대해 반환하는 응답는 `GET` リクエ스트의 레スポンス와 동등하지만 body 데이터가 없습니다.
 
-Python에서 `requests.head()`를 사용하여 HTTP `HEAD` リクエスト를 수행하십시오:
+Python에서 `requests.head()`를 사용하여 HTTP `HEAD` 요청를 수행하십시오:
 
 ```python
 import requests
@@ -189,7 +189,7 @@ import requests
 response = requests.head('https://api.example.com/resource')
 ```
 
-같은 방식으로 `requests.request()`로도 `HEAD` リクエスト를 수행할 수 있습니다:
+같은 방식으로 `requests.request()`로도 `HEAD` 요청를 수행할 수 있습니다:
 
 ```python
 import requests
@@ -199,11 +199,11 @@ response = requests.request('HEAD', 'https://api.example.com/resource')
 
 ## Breaking Down a Response Object From Requests
 
-レスポンス 객체를 다루는 방법을 살펴보겠습니다.
+응답 객체를 다루는 방법을 살펴보겠습니다.
 
 ### Response Object
 
-HTTP リクエ스트를 수행한 후 `requests`는 서버로부터 レスポンス를 수신하고 이를 특별한 [Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) 객체로 매핑합니다.
+HTTP リクエ스트를 수행한 후 `requests`는 서버로부터 응답를 수신하고 이를 특별한 [Response](https://requests.readthedocs.io/en/latest/api/#requests.Response) 객체로 매핑합니다.
 
 아래의 Python `requests` 예제를 확인해 보십시오:
 
@@ -224,7 +224,7 @@ print(response)
 `response`는 몇 가지 유용한 메서드와 속성을 노출하는 `Response` 객체입니다. 다음 섹션에서 가장 중요한 항목을 살펴보겠습니다!
 
 > **Warning**:
-> `requests`는 항상 レスポンス를 반환하지는 않습니다. 오류(예: 잘못된 URL)의 경우 `RequestException`을 발생시킵니다. 아래 로직으로 이 예외를 방어하십시오:
+> `requests`는 항상 응답를 반환하지는 않습니다. 오류(예: 잘못된 URL)의 경우 `RequestException`을 발생시킵니다. 아래 로직으로 이 예외를 방어하십시오:
 
 ```python
 try:
@@ -240,11 +240,11 @@ print('An error occurred during the request:', e)
 
 ### Status Codes
 
-[レスポンス 상태 코드](https://brightdata.co.kr/blog/proxy-101/proxy-error-codes)는 リクエスト의 성공, 실패 또는 기타 상태를 나타내기 위해 서버가 반환하는 표준화된 값입니다.
+[응답 상태 코드](https://brightdata.co.kr/blog/proxy-101/proxy-error-codes)는 요청의 성공, 실패 또는 기타 상태를 나타내기 위해 서버가 반환하는 표준화된 값입니다.
 
-이는 에러 처리에서 특히 유용하며, 클라이언트가 서로 다른 유형의 오류를 적절히 식별하고 처리할 수 있게 합니다. 예를 들어 `4xx` 상태 코드는 클라이언트 측 오류(예: 잘못된 リクエスト)를 나타내며, `5xx` 상태 코드는 서버 측 오류를 나타냅니다.
+이는 에러 처리에서 특히 유용하며, 클라이언트가 서로 다른 유형의 오류를 적절히 식별하고 처리할 수 있게 합니다. 예를 들어 `4xx` 상태 코드는 클라이언트 측 오류(예: 잘못된 요청)를 나타내며, `5xx` 상태 코드는 서버 측 오류를 나타냅니다.
 
-상태 코드를 확인하는 것은 일반적으로 `requests` 라이브러리를 사용해 Python에서 レスポンス를 처리할 때의 첫 단계입니다. リクエ스트를 수행한 후에는 항상 レスポンス의 상태 코드를 확인하여 リクエスト 성공 여부를 판단해야 합니다. 레スポンス 객체의 `status_code` 속성을 통해 상태 코드에 접근합니다:
+상태 코드를 확인하는 것은 일반적으로 `requests` 라이브러리를 사용해 Python에서 응답를 처리할 때의 첫 단계입니다. リクエ스트를 수행한 후에는 항상 응답의 상태 코드를 확인하여 요청 성공 여부를 판단해야 합니다. 레スポンス 객체의 `status_code` 속성을 통해 상태 코드에 접근합니다:
 
 ```python
 response.status_code # 200
@@ -274,7 +274,7 @@ else:
 print(f'Request failed with status code: {response.status_code}')
 ```
 
-대부분의 시나리오에서는 성공 リクエ스트와 오류 レスポンス만 구분하면 됩니다. `requests`는 커스텀 [`__bool()__`](https://www.pythontutorial.net/python-oop/python-__bool__/) 오버로드 덕분에 그 과정을 단순화합니다. 구체적으로 `Response` 객체를 조건식에서 직접 사용할 수 있습니다. 그러면 상태 코드가 `200`과 `399` 사이면 `True`, 그렇지 않으면 `False`로 평가됩니다.
+대부분의 시나리오에서는 성공 リクエ스트와 오류 응답만 구분하면 됩니다. `requests`는 커스텀 [`__bool()__`](https://www.pythontutorial.net/python-oop/python-__bool__/) 오버로드 덕분에 그 과정을 단순화합니다. 구체적으로 `Response` 객체를 조건식에서 직접 사용할 수 있습니다. 그러면 상태 코드가 `200`과 `399` 사이면 `True`, 그렇지 않으면 `False`로 평가됩니다.
 
 즉, 다음 로직으로 リクエ스트의 성공 여부를 확인할 수 있습니다:
 
@@ -292,7 +292,7 @@ print(f'Request failed with status code: {response.status_code}')
 
 ### Response Headers
 
-서버 レスポンス의 ヘッダー는 `headers` 속성을 통해 접근합니다:
+서버 응답의 헤더는 `headers` 속성을 통해 접근합니다:
 
 ```python
 import requests
@@ -310,13 +310,13 @@ print(response_headers)
 {'Server': 'nginx', 'Date': 'Thu, 09 May 2024 12:51:08 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '279', 'Connection': 'keep-alive', 'Cache-Control': 'no-store', 'Access-Control-Allow-Origin': '*'}
 ```
 
-보시는 바와 같이 `response.headers`는 딕셔너리처럼 동작하는 객체를 반환합니다. 즉 키로 ヘッダー 값을 접근할 수 있습니다. 예를 들어 レスポンス의 `Content-Type` ヘッダー에 접근하고 싶다고 가정해 보겠습니다. 아래와 같이 할 수 있습니다:
+보시는 바와 같이 `response.headers`는 딕셔너리처럼 동작하는 객체를 반환합니다. 즉 키로 헤더 값을 접근할 수 있습니다. 예를 들어 응답의 `Content-Type` 헤더에 접근하고 싶다고 가정해 보겠습니다. 아래와 같이 할 수 있습니다:
 
 ```python
 response_headers['Content-Type'] # 'application/json; charset=utf-8'
 ```
 
-HTTP 사양에서 ヘッダー는 대소문자를 구분하지 않으므로, `requests`는 대소문자 표기에 대해 걱정하지 않고 접근할 수 있게 합니다:
+HTTP 사양에서 헤더는 대소문자를 구분하지 않으므로, `requests`는 대소문자 표기에 대해 걱정하지 않고 접근할 수 있게 합니다:
 
 ```python
 response_headers['content-type'] # 'application/json; charset=utf-8'
@@ -324,11 +324,11 @@ response_headers['content-type'] # 'application/json; charset=utf-8'
 
 ### Response Content
 
-`requests`는 レスポンス의 payload에 접근하기 위한 여러 속성과 메서드를 제공합니다:
+`requests`는 응답의 payload에 접근하기 위한 여러 속성과 메서드를 제공합니다:
 
-- [`response.content`](https://requests.readthedocs.io/en/latest/api/#requests.Response.content): レスポンス 콘텐츠를 bytes로 반환합니다.
-- [`response.text`](https://requests.readthedocs.io/en/latest/api/#requests.Response.text): レスポンス 콘텐츠를 Unicode 문자열로 반환합니다.
-- [`response.json()`](https://requests.readthedocs.io/en/latest/api/#requests.Response.json): レスポンス의 JSON 인코딩 콘텐츠를 딕셔너리로 반환합니다.
+- [`response.content`](https://requests.readthedocs.io/en/latest/api/#requests.Response.content): 응답 콘텐츠를 bytes로 반환합니다.
+- [`response.text`](https://requests.readthedocs.io/en/latest/api/#requests.Response.text): 응답 콘텐츠를 Unicode 문자열로 반환합니다.
+- [`response.json()`](https://requests.readthedocs.io/en/latest/api/#requests.Response.json): 응답의 JSON 인코딩 콘텐츠를 딕셔너리로 반환합니다.
 
 다음 예제에서 동작을 확인해 보십시오:
 
@@ -368,7 +368,7 @@ print(response_json)
 print()
 ```
 
-`http://lumtest.com/myip.json`은 호출자의 IP에 대한 정보를 반환하는 특별한 エンドポイント입니다. 위 스니펫의 결과는 다음과 비슷할 것입니다:
+`http://lumtest.com/myip.json`은 호출자의 IP에 대한 정보를 반환하는 특별한 엔드포인트입니다. 위 스니펫의 결과는 다음과 비슷할 것입니다:
 
 ```json
 <class 'bytes'>
@@ -384,7 +384,7 @@ b'{"ip":"45.85.135.110","country":"US","asn":{"asnum":62240,"org_name":"Clouvide
 {'ip': '45.85.135.110', 'country': 'US', 'asn': {'asnum': 62240, 'org_name': 'Clouvider Limited'}, 'geo': {'city': 'Ashburn', 'region': 'VA', 'region_name': 'Virginia', 'postal_code': '20149', 'latitude': 39.0469, 'longitude': -77.4903, 'tz': 'America/New_York', 'lum_city': 'ashburn', 'lum_region': 'va'}}
 ```
 
-세 가지 서로 다른 レスポンス 형식을 확인하십시오. 딕셔너리로서 `response.json()`은 데이터 접근을 단순화하므로 특히 유용합니다:
+세 가지 서로 다른 응답 형식을 확인하십시오. 딕셔너리로서 `response.json()`은 데이터 접근을 단순화하므로 특히 유용합니다:
 
 ```python
 response_json['country'] # 'US'
@@ -394,9 +394,9 @@ response_json['country'] # 'US'
 
 ### Response Cookies
 
-[HTTP Cookie](/blog/web-data/http-cookies)는 ヘッダー로 정의되지만, `Response` 객체는 이를 다루기 위한 특별한 `cookies` 속성을 제공합니다. 이는 서버가 되돌려 보낸 Cookie를 포함하는 [http.cookiejar](https://docs.python.org/3/library/http.cookiejar.html) 객체를 반환합니다.
+[HTTP Cookie](/blog/web-data/http-cookies)는 헤더로 정의되지만, `Response` 객체는 이를 다루기 위한 특별한 `cookies` 속성을 제공합니다. 이는 서버가 되돌려 보낸 Cookie를 포함하는 [http.cookiejar](https://docs.python.org/3/library/http.cookiejar.html) 객체를 반환합니다.
 
-Python `requests` 라이브러리에서 レスポンス 객체로부터 Cookie에 접근하는 방법을 보여주는 예제를 확인해 보십시오:
+Python `requests` 라이브러리에서 응답 객체로부터 Cookie에 접근하는 방법을 보여주는 예제를 확인해 보십시오:
 
 ```python
 import requests
@@ -438,19 +438,19 @@ expires : Sat, 01 Jan 2025 14:30:00 GMT
 
 ## Request Customization With the Python Requests Library
 
-HTTP リクエ스트에는 종종 특별한 필터링 パラメータ와 커스텀 ヘッダー가 포함됩니다. `requests`에서 이를 지정하는 방법을 살펴보겠습니다.
+HTTP リクエ스트에는 종종 특별한 필터링 매개변수와 커스텀 헤더가 포함됩니다. `requests`에서 이를 지정하는 방법을 살펴보겠습니다.
 
 ### Query String Parameters
 
-[쿼리 パラメータ](https://www.semrush.com/blog/url-parameters/)(URL パラメータ라고도 함)는 HTTP リクエ스트에서 URL 끝에 추가되는 추가 パラメータ입니다. 이는 보통 데이터를 필터링하고 レスポンス를 커스터마이징하는 방법 등, リクエ스트에 대한 추가 정보를 서버에 제공합니다.
+[쿼리 매개변수](https://www.semrush.com/blog/url-parameters/)(URL 매개변수라고도 함)는 HTTP リクエ스트에서 URL 끝에 추가되는 추가 매개변수입니다. 이는 보통 데이터를 필터링하고 응답를 커스터마이징하는 방법 등, リクエ스트에 대한 추가 정보를 서버에 제공합니다.
 
 다음 URL을 고려해 보십시오:
 
 `https://api.example.com/data?key1=value1&key2=value2`
 
-이 예제에서 `?key1=value1&key2=value2`는 쿼리 문자열이며 `key1`과 `key2`는 쿼리 パラメータ입니다.
+이 예제에서 `?key1=value1&key2=value2`는 쿼리 문자열이며 `key1`과 `key2`는 쿼리 매개변수입니다.
 
-쿼리 문자열은 `?`로 시작하며, 등호(`=`)로 구분된 키-값 쌍으로 구성되고 `&`로 연결됩니다. 특히 선택적 パラメータ를 다룰 때 Python 코드에서 이 쿼리 문자열을 프로그램적으로 지정하는 것은 항상 쉽지 않습니다. 그래서 `requests`는 `params` 옵션을 제공합니다:
+쿼리 문자열은 `?`로 시작하며, 등호(`=`)로 구분된 키-값 쌍으로 구성되고 `&`로 연결됩니다. 특히 선택적 매개변수를 다룰 때 Python 코드에서 이 쿼리 문자열을 프로그램적으로 지정하는 것은 항상 쉽지 않습니다. 그래서 `requests`는 `params` 옵션을 제공합니다:
 
 ```python
 import requests
@@ -508,7 +508,7 @@ response = requests.get('https://api.example.com/products', params=params)
 
 ### Request Headers
 
-`requests`에서 HTTP リクエ스트의 ヘッダー를 커스터마이징하려면 `headers` 옵션에 딕셔너리로 전달하십시오. 예를 들어, 다음과 같이 `requests`에서 커스텀 `User-Agent` 문자열을 설정할 수 있습니다:
+`requests`에서 HTTP リクエ스트의 헤더를 커스터마이징하려면 `headers` 옵션에 딕셔너리로 전달하십시오. 예를 들어, 다음과 같이 `requests`에서 커스텀 `User-Agent` 문자열을 설정할 수 있습니다:
 
 ```python
 import requests
@@ -530,7 +530,7 @@ response = requests.get('https://api.example.com/data', headers=custom_headers)
 
 ### Request Cookies
 
-HTTP Cookie는 ヘッダー를 통해 서버로 전송되지만, `requests`는 이를 커스터마이징하기 위한 전용 `cookies` 옵션을 제공합니다. 다음 예제처럼 사용하십시오:
+HTTP Cookie는 헤더를 통해 서버로 전송되지만, `requests`는 이를 커스터마이징하기 위한 전용 `cookies` 옵션을 제공합니다. 다음 예제처럼 사용하십시오:
 
 ```python
 # define custom cookies
@@ -556,9 +556,9 @@ response = requests.get('https://www.example.com', cookies=custom_cookies)
 
 ### Proxy Setup
 
-`requests`에서 プロキシ를 통합하면 HTTP リクエ스트를 プロキシ 서버를 통해 라우팅할 수 있습니다. 이는 IPアドレス를 숨기고, レート制限 장치를 우회하거나, 지리적으로 제한된 콘텐츠에 접근할 수 있는 강력한 메커니즘입니다.
+`requests`에서 프록시를 통합하면 HTTP リクエ스트를 프록시 서버를 통해 라우팅할 수 있습니다. 이는 IP 주소를 숨기고, 속도 제한 장치를 우회하거나, 지리적으로 제한된 콘텐츠에 접근할 수 있는 강력한 메커니즘입니다.
 
-Python `requests` 라이브러리에서 `proxies` 옵션을 사용하여 プロキシ 서버를 통합할 수 있습니다:
+Python `requests` 라이브러리에서 `proxies` 옵션을 사용하여 프록시 서버를 통합할 수 있습니다:
 
 ```python
 import requests
@@ -578,13 +578,13 @@ proxy = {
 response = requests.get('https://www.example.com', proxies=proxy)
 ```
 
-전체 튜토리얼은 [Python Requests에서 プロキシ 사용하기](/blog/proxy-101/proxy-with-python-requests) 가이드를 따르십시오.
+전체 튜토리얼은 [Python Requests에서 프록시 사용하기](/blog/proxy-101/proxy-with-python-requests) 가이드를 따르십시오.
 
 ### Basic Authentication
 
-[HTTP 로그인 메커니즘](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)은 “basic login mechanisms”로 더 잘 알려져 있으며, HTTP 프로토콜에 내장된 간단한 로그인 메커니즘 스킴입니다. 이는 `Authorization` ヘッダー에 [Base64](https://developer.mozilla.org/en-US/docs/Glossary/Base64) 형식으로 인코딩된 사용자명과 비밀번호를 전송하는 방식입니다.
+[HTTP 로그인 메커니즘](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)은 “basic login mechanisms”로 더 잘 알려져 있으며, HTTP 프로토콜에 내장된 간단한 로그인 메커니즘 스킴입니다. 이는 `Authorization` 헤더에 [Base64](https://developer.mozilla.org/en-US/docs/Glossary/Base64) 형식으로 인코딩된 사용자명과 비밀번호를 전송하는 방식입니다.
 
-`Authorization` ヘッダー를 수동으로 설정하여 구현할 수도 있지만, `requests`는 이를 위한 전용 `auth` 옵션을 제공합니다. 이는 사용자명과 비밀번호의 튜플을 받습니다. `requests` Python 라이브러리에서 basic login mechanisms을 처리하려면 다음과 같이 사용하십시오:
+`Authorization` 헤더를 수동으로 설정하여 구현할 수도 있지만, `requests`는 이를 위한 전용 `auth` 옵션을 제공합니다. 이는 사용자명과 비밀번호의 튜플을 받습니다. `requests` Python 라이브러리에서 basic login mechanisms을 처리하려면 다음과 같이 사용하십시오:
 
 ```python
 import requests
@@ -604,7 +604,7 @@ response = requests.get('https://api.example.com/private/users', auth=(username,
 
 SSL 인증서 검증은 인터넷을 통해 클라이언트와 서버 간의 안전한 통신을 보장하는 데 매우 중요합니다. 동시에, 대상 서버를 신뢰하며 검증을 강제할 필요가 없는 상황도 있습니다.
 
-특히 プロキシ 서버를 통해 HTTP 트래픽을 라우팅할 때 SSL 인증서와 관련된 오류를 만날 수 있습니다. 이 경우 SSL 인증서 검증을 비활성화해야 할 수 있습니다. `requests`에서는 [`verify`](https://requests.readthedocs.io/en/latest/user/advanced/#ssl-cert-verification) 옵션을 통해 이를 수행할 수 있습니다:
+특히 프록시 서버를 통해 HTTP 트래픽을 라우팅할 때 SSL 인증서와 관련된 오류를 만날 수 있습니다. 이 경우 SSL 인증서 검증을 비활성화해야 할 수 있습니다. `requests`에서는 [`verify`](https://requests.readthedocs.io/en/latest/user/advanced/#ssl-cert-verification) 옵션을 통해 이를 수행할 수 있습니다:
 
 ```python
 import requests
@@ -618,7 +618,7 @@ response = requests.get('https://api.example.com/data', verify=False)
 
 기본적으로 requests는 서버가 응답할 때까지 무기한 대기합니다. 서버에 과부하가 걸렸거나 네트워크가 느려진 경우, 이러한 동작은 문제가 될 수 있습니다.
 
-결코 도착하지 않을 수도 있는 レスポンス를 기다리느라 애플리케이션이 느려지는 것을 방지하기 위해 `requests`에는 [`timeout`](https://requests.readthedocs.io/en/latest/user/advanced/#timeouts) 옵션이 있습니다. 이는 レスポンス를 기다릴 초 수를 나타내는 정수 또는 부동소수 값을 받습니다:
+결코 도착하지 않을 수도 있는 응답를 기다리느라 애플리케이션이 느려지는 것을 방지하기 위해 `requests`에는 [`timeout`](https://requests.readthedocs.io/en/latest/user/advanced/#timeouts) 옵션이 있습니다. 이는 응답를 기다릴 초 수를 나타내는 정수 또는 부동소수 값을 받습니다:
 
 ```python
 import requests
@@ -628,7 +628,7 @@ import requests
 response1 = requests.get("https://api.example.com/data", timeout=2)
 ```
 
-또는 `timeout`은 두 요소(연결 タイムアウト과 읽기 タイムアウト)를 가진 튜플도 받습니다. 아래 예제처럼 지정하십시오:
+또는 `timeout`은 두 요소(연결 타임아웃과 읽기 타임아웃)를 가진 튜플도 받습니다. 아래 예제처럼 지정하십시오:
 
 ```python
 import requests
@@ -638,7 +638,7 @@ import requests
 response = requests.get("https://api.example.com/data", timeout=(2.5, 4))
 ```
 
-리クエ스트가 지정된 연결 タイムアウト 내에 연결을 설정하고 읽기 タイムアウト 내에 데이터를 받으면, レスポンス는 평소처럼 반환됩니다. 그렇지 않고 リクエスト가 タイムアウト되면 `Timeout` 예외가 발생합니다:
+리クエ스트가 지정된 연결 타임아웃 내에 연결을 설정하고 읽기 타임아웃 내에 데이터를 받으면, 응답는 평소처럼 반환됩니다. 그렇지 않고 요청가 타임아웃되면 `Timeout` 예외가 발생합니다:
 
 ```python
 import requests
@@ -658,6 +658,6 @@ print("The request timed out")
 
 Python `requests` 모듈은 여러 사용 사례를 포괄하는 유용하고 인기 있는 HTTP 라이브러리입니다. 그러나 어떤 HTTP リクエ스트든 사용자의 공개 IP를 노출합니다. 이는 사용자가 누구인지, 어디에 사는지에 대한 정보를 제공하므로 프라이버시에 좋지 않습니다.
 
-IPアドレス를 숨기는 방법은 여러 가지가 있으며, 더 높은 보안과 프라이버시를 달성하는 가장 효과적인 방법은 プロキシ 서버를 사용하는 것입니다. Bright Data는 전 세계 최고의 [プロキシ 서버](https://brightdata.co.kr/proxy-types)를 운영하며, Fortune 500 기업과 20,000명 이상의 고객에게 서비스를 제공합니다.
+IP 주소를 숨기는 방법은 여러 가지가 있으며, 더 높은 보안과 프라이버시를 달성하는 가장 효과적인 방법은 프록시 서버를 사용하는 것입니다. Bright Data는 전 세계 최고의 [프록시 서버](https://brightdata.co.kr/proxy-types)를 운영하며, Fortune 500 기업과 20,000명 이상의 고객에게 서비스를 제공합니다.
 
 지금 등록하고 무료 체험을 시작해 보십시오!
